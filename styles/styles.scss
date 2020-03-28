@@ -1,0 +1,74 @@
+body {
+    background: url(../images/bg-sky.jpg);
+    background-size: cover;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+aside {
+    width: 50%;
+    margin: 0 auto;
+    padding: 50px 0 0px;
+}
+
+.list-group {
+    -ms-flex-direction: row;
+    flex-direction: row;
+    .list-group-item {
+        border: 1px solid #000;
+        margin: 0 10px;
+    }
+    .list-group-item:first-child {
+        border-radius: 0;
+        margin-left: 0;
+    }
+    .list-group-item:last-child {
+        border-radius: 0;
+        margin-right: 0;
+    }
+}
+
+#today {
+    .card {
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.3);
+        img {
+            width: 50px;
+        }
+    }
+    .card-text {
+        font-size: 62px;
+        float: left;
+        padding: 0 10px;
+        text-align: center;
+        width: 33%;
+    }
+    .card-text span {
+        display: block;
+        font-size: 20px;
+    }
+}
+
+#forecast {
+    display: none;
+    width: 100%;
+    background-color: #fff;
+    padding: 30px;
+    margin: 24px !important;
+    .tile {
+        background: #fff;
+        width: 20%;
+        float: left;
+        border: 1px solid #ccc;
+        padding: 25px;
+        h5 {
+            font-weight: bold;
+        }
+    }
+}
+
+@media (min-width: 576px) {
+    .form-inline .form-control {
+        width: 94%;
+    }
+}
