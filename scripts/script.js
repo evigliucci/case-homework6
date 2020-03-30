@@ -21,7 +21,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: "GET",
-            url: "http://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=174c73860ce165f2c9e13f31c04e6521&units=imperial",
+            url: "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=174c73860ce165f2c9e13f31c04e6521&units=imperial",
             dataType: "json",
             success: function(data) {
                 // create prevSearch link for this search
@@ -63,19 +63,18 @@ $(document).ready(function() {
     function getForecast(searchValue) {
         $.ajax({
             type: "GET",
-            url: "http://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&appid=174c73860ce165f2c9e13f31c04e6521&units=imperial",
+            url: "https://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&appid=174c73860ce165f2c9e13f31c04e6521&units=imperial",
             dataType: "json",
             success: function(data) {
 
                 $("#forecast").html("<h4>5-Day Forecast:</h4>");
 
                 for (var i = 0; i < data.list.length; i++) {
-                    console.log(data.list[i].dt_txt + " " + data.list[i].dt_txt.indexOf("15:00:00"));
                     if (data.list[i].dt_txt.indexOf("15:00:00") !== -1) {
                         var tile = $("<div class='tile'>")
                         var title = $("<h5>").text(new Date(data.list[i].dt_txt).toLocaleDateString());
                         var imgSrc = data.list[i].weather[0].icon + ".png";
-                        var img = $("<img>").attr("src", "http://api.openweathermap.org/img/w/" + imgSrc);
+                        var img = $("<img>").attr("src", "https://api.openweathermap.org/img/w/" + imgSrc);
                         var p1 = $("<p>").text("Temp: " + Math.round(data.list[i].main.temp_max) + " °F");
                         var p2 = $("<p>").text("Humidity: " + data.list[i].main.humidity + "%");
 
